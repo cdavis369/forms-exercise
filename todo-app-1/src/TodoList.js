@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Todo from './Todo';
+import Todo from './Todo.js';
 import NewTodoForm from './NewTodoForm.js';
 
 function TodoList() {
@@ -20,7 +20,7 @@ function TodoList() {
       <NewTodoForm addTodo={addTodo} />
       <ul>
       {todos.map((todo, index) => (
-        <li key={index}><Todo key={index} {...todo} onDelete={() => removeTodo(index)} /></li>
+        <li key={index}><Todo key={index} index={index} {...todo} onDelete={() => removeTodo(index)} /></li>
       ))}  
       </ul>
     </div>
