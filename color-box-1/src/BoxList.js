@@ -13,13 +13,14 @@ function BoxList() {
     const updatedBoxes = [...boxes];
     updatedBoxes.splice(index, 1);
     setBoxes(updatedBoxes);
+    console.log(index)
   };
 
   return (
     <div>
       <NewBoxForm addBox={addBox} />
       {boxes.map((box, index) => (
-        <Box key={index} {...box} onDelete={() => removeBox(index)} />
+        <Box key={index} index={index} {...box} onDelete={() => removeBox(index)} />
       ))}
     </div>
   );
